@@ -1,0 +1,213 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:linear-gradient(135deg,#3b1f16,#5b3422,#7b4b2a);
+
+}
+
+
+/* ==========================
+   BACKGROUND
+========================== */
+
+.background{
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#ffffff15,transparent 40%),
+    radial-gradient(circle at bottom,#ffffff10,transparent 45%);
+
+    animation:bgMove 8s infinite alternate ease-in-out;
+
+}
+
+@keyframes bgMove{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.05);
+    }
+
+}
+
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+    width:min(95vw, 800px);
+}
+
+
+
+/* ==========================
+   TITLE
+========================== */
+
+.title{
+
+    color:white;
+
+    font-size:42px;
+
+    letter-spacing:2px;
+
+    margin-bottom:10px;
+
+    text-shadow:0 0 20px rgba(255,255,255,.25);
+
+}
+
+
+.instruction{
+
+    color:#ffe8c4;
+
+    font-size:18px;
+
+    margin-bottom:40px;
+
+}
+
+
+/* ==========================
+   SCROLL AREA
+========================== */
+
+.scroll{
+    width:100%;
+    height:auto;
+}
+
+/* ==========================
+   RIBBON
+========================== */
+
+#ribbon{
+
+    position:absolute;
+
+    top:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:100;
+
+    cursor:grab;
+
+    user-select:none;
+
+}
+
+#ribbon img{
+
+    width:160px;
+
+    transition:.3s;
+
+}
+
+#ribbon:hover img{
+
+    transform:scale(1.05);
+
+}
+
+
+/* ==========================
+   SURPRISE IMAGE
+========================== */
+
+#surprise{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0.2);
+
+    width:420px;
+    height:650px;
+
+    opacity:0;
+
+    overflow:hidden;
+
+    border-radius:15px;
+
+
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+#surprise img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+   
+}
+
+
+/* ==========================
+   OPEN STATE
+========================== */
+
+.open #surprise{
+
+    opacity:1;
+
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:900px){
+
+.scroll{
+
+    width:100%;
+
+    transform:scale(.65);
+
+    transform-origin:center;
+
+}
+
+.title{
+
+    font-size:30px;
+
+}
+
+.instruction{
+
+    font-size:15px;
+
+}
+
+}
